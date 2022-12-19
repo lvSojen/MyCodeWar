@@ -1,0 +1,26 @@
+public class Kata {
+  public static String createPhoneNumber(int[] numbers) {
+    // Your code here!
+    StringBuilder sb = new StringBuilder();
+    int pos = 0;
+    for(int num : numbers) {
+      sb = checkPos(sb,pos);
+      pos +=1;
+      sb.append(num);
+    }
+    return sb.toString();
+  }
+  public static StringBuilder checkPos(StringBuilder sb, int pos) {
+    String left = "(";
+    String right = ") ";
+    String middle = "-";
+    if(pos == 0) {
+      sb.append(left);
+    } else if (pos == 3) {
+      sb.append(right);
+    } else if (pos == 6) {
+      sb.append(middle);
+    }
+    return sb;
+  }
+}
